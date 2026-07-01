@@ -4,7 +4,7 @@ Welcome to my AI Engineering journey.
 
 ## About Me
 
-I'm Nour Mohamed Fawzy, an AI & Machine Learning Engineer passionate about building intelligent systems and production-ready AI applications.
+I'm Nour Ezz Alarab, an AI & Machine Learning Engineer passionate about building intelligent systems and production-ready AI applications.
 
 ## Goal
 
