@@ -49,3 +49,34 @@ def char_count(text: str) -> int:
     cleaned_text = clean_text(text)
     cleaned_text.replace(" ", "")
     return len(cleaned_text.replace(" ", ""))
+
+#_____________________________________________________________________________________
+
+import re
+
+def sentence_count(text: str) -> int:
+    """
+    Count the number of sentences in the text.
+
+    Args:
+        text: Input text.
+
+    Returns:
+        Number of sentences.
+    """
+    if not isinstance(text, str):
+        raise TypeError(f"text must be a string, got {type(text).__name__}")
+
+    text = text.strip()
+
+    if not text:
+        return 0
+
+    # Find groups of sentence-ending punctuation
+    sentences = re.findall(r"[.!?]+", text)
+
+    if sentences:
+        return len(sentences)
+
+    # Text without punctuation is considered one sentence
+    return 1
