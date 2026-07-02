@@ -1,4 +1,5 @@
 import string
+from collections import Counter
 
 def clean_text(text: str) -> str:
     """
@@ -80,3 +81,44 @@ def sentence_count(text: str) -> int:
 
     # Text without punctuation is considered one sentence
     return 1
+
+#_____________________________________________________________________________________
+
+def unique_words(text: str) -> int:
+    """
+    Get the set of unique words in the text.
+
+    Args:
+        text: Input text.
+
+    Returns:
+        Set of unique words.
+    """
+    cleaned_text = clean_text(text)
+    words = cleaned_text.split()
+    unique= set(words)
+    return len(unique)
+
+#_____________________________________________________________________________________
+
+def most_common_word(text: str) -> str:
+    """
+    Return the most common word in the text.
+
+    Args:
+        text: Input text.
+
+    Returns:
+        The most common word.
+        Returns an empty string if the text is empty.
+    """
+    cleaned_text = clean_text(text)
+
+    if not cleaned_text:
+        return ""
+
+    words = cleaned_text.split()
+
+    word_counts = Counter(words)
+
+    return word_counts.most_common(1)[0][0]
